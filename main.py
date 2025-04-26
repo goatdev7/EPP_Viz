@@ -141,7 +141,7 @@ async def energy_cost(org_id):
         raise HTTPException(status_code=400, detail=str(e))
 # summary visualization
 @app.get('/viz/summary/{org_id}', response_class=HTMLResponse)
-async def energy_summary(org_id: int):
+async def energy_summary(org_id):
     try:
         df = get_db_data(org_id)
         fig = px.scatter(
